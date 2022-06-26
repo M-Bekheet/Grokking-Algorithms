@@ -1,1 +1,1 @@
-console.log('Hello world!');
+const binarySearch = require('./01-binary-search');
