@@ -1,0 +1,32 @@
+{
+  "name": "grokking-algorithms",
+  "author": "Mahmoud Bekheet",
+  "version": "1.0.0",
+  "description": "This is my implementation for the Grokking Algorithms book in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Bekheet/Grokking-Algorithms.git"
+  },
+  "keywords": [
+    "grokking-algorithms",
+    "grokking",
+    "algorithms"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-Bekheet/Grokking-Algoirthms/issues"
+  },
+  "homepage": "https://github.com/M-Bekheet/Grokking-Algoirthms#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
