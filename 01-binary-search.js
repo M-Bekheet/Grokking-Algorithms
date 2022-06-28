@@ -1,9 +1,10 @@
 /*
-  Binary Search: Search for an item location in a `sorted` collection. And it must be sorted.
-  Worst case tries: log2(n) times.
+  Binary Search: 
+   - Time Complexity: O(log n)
+    - Search for an item location in a `sorted` collection. And it must be sorted.
 
-  Example: 
-   arr:[1,2,...,64] ==> tries: log2(64) = 6 
+    - Example: 
+    arr:[1,2,...,64] ==> tries: log(64) = 6 
 */
 
 const binarySearch = (list, item) => {
@@ -34,4 +35,5 @@ const binarySearch = (list, item) => {
 
 const list = [];
 for (let i = 1; i <= 50; i++) list.push(i);
+
 console.log(binarySearch(list, 13));
