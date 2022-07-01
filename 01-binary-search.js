@@ -36,4 +36,6 @@ const binarySearch = (list, item) => {
 const list = [];
 for (let i = 1; i <= 50; i++) list.push(i);
 
+console.time('Binary Search');
 console.log(binarySearch(list, 13));
+console.timeEnd('Binary Search');

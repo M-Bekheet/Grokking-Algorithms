@@ -28,7 +28,9 @@ const selectionSort = (myList) => {
 };
 
 const arr = [
-  5, 8, 6, 4, 38, 14, 9, 2, 1, 89, 8, 19, 54, 7, 22, 64, 15, 84, 55, 42,
+  5, 6, 4, 38, 14, 9, 2, 1, 89, 8, 19, 54, 7, 22, 64, 15, 84, 55, 42,
 ];
 
+console.time('Selection Sort');
 console.log(selectionSort(arr));
+console.timeEnd('Selection Sort');
