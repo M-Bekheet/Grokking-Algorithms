@@ -17,6 +17,12 @@
       "name": "Debug Mode",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "command": "npm run playground",
+      "name": "Debug Playground",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

@@ -3,7 +3,7 @@
   - It works on graph and is used for: (finding the shortest path between 2 nodes & making sure that it does exist or not)
   - Time Complexity: O(number of nodes + number of edges)
   - Graph is a data structure between nodes through edges.
-  - Edges are the linkage between nodes and could be directed if it's a 1 way edge A --> B and can be indirected if it's a 2 way edge A <--- B
+  - Edges are the linkage between nodes and could be directed if it's a 1 way edge A --> B and can be indirected if it's a 2 way edge A <---> B
   - Tree is a unique type of Graph in which the nodes are connected to each other in a directed way and no back-up in the reverse direction.
     Tree Example:
          A
@@ -19,22 +19,22 @@
 
 // Assumed graph
 const network = {
-  You: ['Jack', 'Emy', 'Alice'],
+  You: ["Jack", "Emy", "Alice"],
   Jack: [],
-  Adam: ['Michelle'],
+  Adam: ["Michelle"],
   Michelle: [],
-  Michael: ['Michelle'],
-  Emy: ['Jack', 'Michael'],
-  Alice: ['Adam'],
+  Michael: ["Michelle"],
+  Emy: ["Jack", "Michael"],
+  Alice: ["Adam"],
 };
 
 // Assumed Condition
-const isSeller = (name) => name[name.length - 1] === 'm';
+const isSeller = (name) => name[name.length - 1] === "m";
 
 // return the closest mangoes seller if found
-const breadthFirstSearch = (network = {}) => {
+const breadthFirstSearch = (name) => {
   const loop = (listToSearch = [], checkedBefore) => {
-    if (listToSearch.length === 0) return 'Not found';
+    if (listToSearch.length === 0) return "Not found";
     const [current, ...rest] = listToSearch;
 
     if (checkedBefore.has(current)) {
@@ -53,7 +53,28 @@ const breadthFirstSearch = (network = {}) => {
     return loop([...rest, ...personFriends], checkedBefore);
   };
 
-  return loop(network.You, new Set());
+  return loop(network[name], new Set());
 };
 
-console.log(breadthFirstSearch(network));
+// ================ //
+
+function breadthFirstSearchBookVersion(name) {
+  let listToSearch = network[name];
+  const searched = new Set();
+  while (listToSearch.length) {
+    const person = listToSearch.shift(); //deque
+    if (!searched.has(person)) {
+      if (isSeller(person)) {
+        console.log(`${person} is a mango seller`);
+        return true;
+      } else {
+        searched.add(person);
+        listToSearch.push(...network[person]);
+      }
+    }
+  }
+  return false;
+}
+
+console.log(breadthFirstSearch("You"));
+// console.log(breadthFirstSearchBookVersion("You"));
